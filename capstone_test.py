@@ -10,6 +10,7 @@ for i in md.disasm_lite(CODE,0x1000) :
     if count>1:
         print("无法转换指令！")
         break
+# asdaskjdlas
 # lst = md.disasm(CODE,0x1000,count=1)
 # print(type(lst))
 # for i in lst:
