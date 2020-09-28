@@ -11,6 +11,7 @@ for i in md.disasm_lite(CODE,0x1000) :
         print("无法转换指令！")
         break
 # asdaskjdlas
+#q
 # lst = md.disasm(CODE,0x1000,count=1)
 # print(type(lst))
 # for i in lst:
