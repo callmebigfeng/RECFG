@@ -27,6 +27,7 @@ for section in pe.sections:
         print('c2出现次数：   %d' % text.count(b'\xc2'))
         print('c3出现次数：   %d' % text.count(b'\xc3'))
         tmp = b''.join(text)
+        print(tmp)
         md = Cs(CS_ARCH_X86, CS_MODE_32)
         for i in md.disasm(tmp, 0x00000):
             print("0x%x:\t%s\t%s" % (i.address, i.mnemonic, i.op_str))
