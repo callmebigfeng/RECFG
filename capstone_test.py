@@ -6,7 +6,7 @@ print(md.disasm(CODE,0x1000))
 count = 0
 for i in md.disasm_lite(CODE,0x1000) :
     count+=1
-    print("0x%x:\t%s\t%s"%(i.address,i.mnemonic,i.op_str))
+    print(i[2:])
     if count>1:
         print("无法转换指令！")
         break
