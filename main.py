@@ -50,10 +50,11 @@ for section in pe.sections:
                     if mnem[i][2][:2]==  '0x' :       # 跟着地址直接跳转
                         for  j in range(len(mnem)) :
                             if hex(mnem[j][0])== mnem[i][2]   :
-                                CFG[mnem[i][0], mnem[i][1], mnem[i][2], str(mnem[i][3])] = [(           #   jmp ->  address   //从地址处开始反汇编 （8未完成）
+                                CFG[mnem[i][0], mnem[i][1], mnem[i][2], str(mnem[i][3])] = [(           #   jmp ->  address   //从地址处开始反汇编 （未完成）
                                 mnem[j][0], mnem[j][1], mnem[j][2], str(mnem[j][3]))]
                             else:            #问题 ： 相同字节直接编译 和 有前后文编译有区别么 ？
                                 pass
+
                     else :
                         pass          #  未完成 ：jmp  dword ptr   寄存器/地址   需要取出寄存器的值？
                 else:
