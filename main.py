@@ -58,7 +58,7 @@ for section in pe.sections:
             CFG = dict()  # CFG图
             for i in range(len(mnem)) :
                 if mnem[i][1] == 'jmp' :    #  还有一些 ret，call之类的指令
-                    #print(hex(mnem[i][0]), mnem[i][1], mnem[i][2], str(mnem[i][3]))
+                    print(hex(mnem[i][0]), mnem[i][1], mnem[i][2], str(mnem[i][3]))
                     if mnem[i][2][:2]==  '0x' :       # 跟着地址直接跳转
                         for  j in range(len(mnem)) :
                             if hex(mnem[j][0])== mnem[i][2]   :
@@ -75,7 +75,7 @@ for section in pe.sections:
                         CFG[mnem[i][0],mnem[i][1],mnem[i][2],str(mnem[i][3])] = [(mnem[i+1][0],mnem[i+1][1],mnem[i+1][2],str(mnem[i+1][3]))]    # 将上一条指令指向下一条指令
                     if  mnem[i][1] == 'jz' :      #  还有其他跳转指令
                         pass       #  代码同  jmp    将跳转位置添加到key中
-            print(CFG)
+            #print(CFG)
 
 
             #程序流程图  字典 ——> 邻接矩阵
@@ -92,7 +92,7 @@ for section in pe.sections:
 
             df = pd.DataFrame(edges)
             matrix = pd.crosstab(df[0], df[1])
-            print(matrix)
+            #print(matrix)
 
 
             #将图的邻接矩阵转化成图
